@@ -1,9 +1,11 @@
+#This Is A Comment I added
 import RPi.GPIO as GPIO
 import time
 
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(24, GPIO.OUT)
-GPIO.setup(23, GPIO.IN)
+GPIO.setup(24, GPIO.OUT)#LED Control
+GPIO.setup(23, GPIO.IN, pull_up_down= GPOI.PUD_DOWN) #Slide Switch input
+GPOI.setup(25, GPIO.IN) #PIR INPUT
 
 while True:
 	if GPIO.input(23) :		 #if the switch is on, light the diode
